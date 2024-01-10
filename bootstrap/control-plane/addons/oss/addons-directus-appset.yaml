@@ -15,8 +15,8 @@ spec:
               values:
                 addonChart: directus
                 # anything not staging or prod use this version
-                addonChartVersion: 0.7.37
-                addonChartRepository: https://digitalist-se.github.io/directus-helm-chart/
+                addonChartVersion: 0.1.0
+                addonChartRepository: https://charts.rock8s.com
               selector:
                 matchExpressions:
                   - key: akuity.io/argo-cd-cluster-name
@@ -30,13 +30,13 @@ spec:
                 matchLabels:
                   environment: staging
               values:
-                addonChartVersion: 0.7.37
+                addonChartVersion: 0.1.0
           - clusters:
               selector:
                 matchLabels:
                   environment: prod
               values:
-                addonChartVersion: 0.7.37
+                addonChartVersion: 0.1.0
   template:
     metadata:
       name: addon-{{.name}}-{{.values.addonChart}}
